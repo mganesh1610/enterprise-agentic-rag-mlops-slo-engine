@@ -1,0 +1,133 @@
+{
+  "verified_dataset_hashes": {
+    "incident_event_log.zip": "6294e29a311647306bfdfc85783f7df66517c197b9cd49aa5ee36ba9c525d1d6",
+    "banking77_train.csv": "b06e26ac675513959a63135f11b94ea7786ed02da65db93a5650d8838cbc664b",
+    "banking77_test.csv": "d12d6e3bc4c3103966ae786dc435913c0c563dfa328f5a3646d0e62cfeeb474d"
+  },
+  "dataset_scale": {
+    "uci_incident_lifecycle_events": 141712,
+    "uci_unique_incidents": 24918,
+    "uci_assignment_groups": 71,
+    "uci_incident_categories": 53,
+    "banking77_train_utterances": 10003,
+    "banking77_test_utterances": 3080,
+    "banking77_total_utterances": 13083,
+    "banking77_unique_intents": 77,
+    "combined_public_records": 154795
+  },
+  "model_evaluation": {
+    "train_incidents": 19986,
+    "test_incidents": 4932,
+    "holdout_roc_auc": 0.8839,
+    "holdout_accuracy": 0.8179,
+    "holdout_precision": 0.7794,
+    "holdout_recall": 0.7104,
+    "holdout_f1": 0.7433
+  },
+  "agentic_rag_evaluation": {
+    "evaluated_queries": 500,
+    "knowledge_base_playbooks": 71,
+    "hybrid_rrf_recall_at_4": 0.874,
+    "structured_json_grounding_compliance": 1.0
+  },
+  "mlops_slo_and_canary_governance": {
+    "champion_service_slo": {
+      "service_name": "enterprise-agentic-rag-inference-v1",
+      "total_requests": 4932,
+      "successful_requests": 4931,
+      "availability_pct": 99.9797,
+      "slo_availability_target_pct": 99.95,
+      "p50_latency_ms": 71.56,
+      "p95_latency_ms": 96.3,
+      "p99_latency_ms": 96.41,
+      "slo_p95_target_ms": 150.0,
+      "error_rate_pct": 0.0203,
+      "error_budget_burn_rate": 0.406,
+      "psi_drift": 0.00968,
+      "ks_drift": 0.02352,
+      "canary_status": "PROMOTED_HEALTHY",
+      "rollback_triggered": false,
+      "rollback_reason": "NONE"
+    },
+    "degraded_canary_auto_rollback": {
+      "service_name": "enterprise-agentic-rag-canary-v2-degraded",
+      "total_requests": 1000,
+      "successful_requests": 982,
+      "availability_pct": 98.2,
+      "slo_availability_target_pct": 99.95,
+      "p50_latency_ms": 168.4,
+      "p95_latency_ms": 412.8,
+      "p99_latency_ms": 589.2,
+      "slo_p95_target_ms": 150.0,
+      "error_rate_pct": 1.8,
+      "error_budget_burn_rate": 36.0,
+      "psi_drift": 10.73838,
+      "ks_drift": 0.86212,
+      "canary_status": "ROLLED_BACK_TO_CHAMPION",
+      "rollback_triggered": true,
+      "rollback_reason": "SLO_BREACH: PSI=10.738>=0.20, p95=412.8ms>150.0ms, Avail=98.20%<99.95%"
+    }
+  },
+  "top_sql_cte_support_groups": [
+    {
+      "assignment_group": "Group 70",
+      "incident_volume": 9444,
+      "sla_breach_rate": 0.1616,
+      "avg_reassignments": 0.5
+    },
+    {
+      "assignment_group": "?",
+      "incident_volume": 2157,
+      "sla_breach_rate": 0.5137,
+      "avg_reassignments": 1.59
+    },
+    {
+      "assignment_group": "Group 25",
+      "incident_volume": 1243,
+      "sla_breach_rate": 0.572,
+      "avg_reassignments": 1.09
+    },
+    {
+      "assignment_group": "Group 39",
+      "incident_volume": 1199,
+      "sla_breach_rate": 0.3119,
+      "avg_reassignments": 1.37
+    },
+    {
+      "assignment_group": "Group 24",
+      "incident_volume": 1060,
+      "sla_breach_rate": 0.3519,
+      "avg_reassignments": 1.03
+    },
+    {
+      "assignment_group": "Group 23",
+      "incident_volume": 811,
+      "sla_breach_rate": 0.4131,
+      "avg_reassignments": 1.58
+    },
+    {
+      "assignment_group": "Group 64",
+      "incident_volume": 716,
+      "sla_breach_rate": 0.1089,
+      "avg_reassignments": 0.16
+    },
+    {
+      "assignment_group": "Group 73",
+      "incident_volume": 576,
+      "sla_breach_rate": 0.4601,
+      "avg_reassignments": 1.02
+    },
+    {
+      "assignment_group": "Group 28",
+      "incident_volume": 545,
+      "sla_breach_rate": 0.4642,
+      "avg_reassignments": 1.27
+    },
+    {
+      "assignment_group": "Group 27",
+      "incident_volume": 518,
+      "sla_breach_rate": 0.417,
+      "avg_reassignments": 0.99
+    }
+  ]
+}
